@@ -18,8 +18,19 @@ while True:
 			elif re.match('TV(oA|pB|pQ|qA|qQ|ro)', raw_post_text.text) is not None :
 				f = open('{0}-{1}.txt'.format(post['key'], 'PE64'), 'w')
 				f.write(raw_post_text.text.encode('utf-8').strip())
-				f.close()			
-				
+				f.close()
+			elif re.match('.*.sdcard.*.', raw_post_text.text) is not None :
+				y = open('{0}-{1}.txt'.format(post['key'], 'sdcard'), 'w')
+				y.write(raw_post_text.text.encode('utf-8').strip())
+				y.close()			
+			elif re.match('.*.\.onion', raw_post_text.text) is not None :
+				z = open('{0}-{1}.txt'.format(post['key'], 'onion'), 'w')
+				z.write(raw_post_text.text.encode('utf-8').strip())
+				z.close()			
+			elif re.match('(STRING|DELAY)', raw_post_text.text) is not None :
+				x = open('{0}-{1}.txt'.format(post['key'], 'Ducky'), 'w')
+				x.write(raw_post_text.text.encode('utf-8').strip())
+				x.close()			
 	time.sleep(60)
 		
 		
