@@ -27,7 +27,7 @@ while True:
 				z = open('{0}-{1}.txt'.format(post['key'], 'onion'), 'w')
 				z.write(raw_post_text.text.encode('utf-8').strip())
 				z.close()			
-			elif re.match('(STRING|DELAY)', raw_post_text.text) is not None :
+			elif re.match('.*(STRING.*.ENTER.*.DELAY)*.', raw_post_text.text) is not None :
 				x = open('{0}-{1}.txt'.format(post['key'], 'Ducky'), 'w')
 				x.write(raw_post_text.text.encode('utf-8').strip())
 				x.close()			
