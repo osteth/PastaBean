@@ -1,9 +1,12 @@
 #!/usr/bin/python
 
-import re, requests, json, time
+import re, requests, json, time, datetime
+
 while True:
 	### Read in last N posts and get the key and put in array
-	print 'starting loop'
+	#print 'starting loop' + now
+	now = datetime.datetime.now()
+	print 'Loop Check  = ' + str(now.strftime("%H:%M:%S%p"))
 	post_limit = '100'
 	last_n_posts = requests.get('http://pastebin.com/api_scraping.php?limit=' + post_limit).text
 	json_posts = json.loads(last_n_posts)
