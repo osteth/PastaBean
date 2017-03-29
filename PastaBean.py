@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
-import re, requests, json, time, datetime
+import re, requests, json, time, datetime, smtplib
+
 
 while True:
 	### Read in last N posts and get the key and put in array
@@ -34,9 +35,10 @@ while True:
 				x.write(raw_post_text.text.encode('utf-8').strip())
 				x.close()	
 			elif re.match('aHR0cDovLw', raw_post_text.text) is not None :
-				x = open('{0}-{1}.txt'.format(post['key'], 'httpB64'), 'w')
-				x.write(raw_post_text.text.encode('utf-8').strip())
-				x.close()		
+				q = open('{0}-{1}.txt'.format(post['key'], 'httpB64'), 'w')
+				q.write(raw_post_text.text.encode('utf-8').strip())
+				q.close()	
+			
 	time.sleep(60)
 		
 		
