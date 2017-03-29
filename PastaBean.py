@@ -4,7 +4,6 @@ import re, requests, json, time, datetime
 
 while True:
 	### Read in last N posts and get the key and put in array
-	#print 'starting loop' + now
 	now = datetime.datetime.now()
 	print 'Loop Check  = ' + str(now.strftime("%H:%M:%S%p"))
 	post_limit = '100'
@@ -33,7 +32,11 @@ while True:
 			elif re.match('(STRING|ENTER|DELAY)', raw_post_text.text) is not None :
 				x = open('{0}-{1}.txt'.format(post['key'], 'Ducky'), 'w')
 				x.write(raw_post_text.text.encode('utf-8').strip())
-				x.close()			
+				x.close()	
+			elif re.match('aHR0cDovLw', raw_post_text.text) is not None :
+				x = open('{0}-{1}.txt'.format(post['key'], 'httpB64'), 'w')
+				x.write(raw_post_text.text.encode('utf-8').strip())
+				x.close()		
 	time.sleep(60)
 		
 		
