@@ -11,6 +11,9 @@ Python Script to Scrape Pastebin with Regex.
 
 ## Future Improvements
 - Better RegeX current and new.
+- Automate decoding files and collecting/indexing MD5 sums when needed.
 - Improved text file handling.
 - Decreased status output to one line.
 - Generate log file.
+
+
