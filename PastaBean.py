@@ -2,7 +2,31 @@
 
 import re, requests, json, time, datetime, smtplib
 
-
+def gmail_alert(subject,body):
+    gmail_user = "gmail sender account"
+    gmail_password = "Sender Password"
+    gmail_sender = gmail_user  
+    to = ['Gmail receiver account']  
+     
+ 
+    email_text = """\  
+    From: %s  
+    To: %s  
+    Subject: %s
+    %s
+    """ % (gmail_sender, ", ".join(to), subject, body)
+ 
+    try:  
+        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        server.ehlo()
+        server.login(gmail_user, gmail_password)
+        server.sendmail(gmail_sender, to, email_text)
+        server.close()
+ 
+        print 'Email sent!'
+    except:  
+        print 'Something went wrong...'
+        
 while True:
 	### Read in last N posts and get the key and put in array
 	now = datetime.datetime.now()
@@ -54,30 +78,7 @@ while True:
 			
 			 
 	time.sleep(60)
-def gmail_alert(subject,body):
-    gmail_user = "gmail sender account"
-    gmail_password = "Sender Password"
-    gmail_sender = gmail_user  
-    to = ['Gmail receiver account']  
-     
- 
-    email_text = """\  
-    From: %s  
-    To: %s  
-    Subject: %s
-    %s
-    """ % (gmail_sender, ", ".join(to), subject, body)
- 
-    try:  
-        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-        server.ehlo()
-        server.login(gmail_user, gmail_password)
-        server.sendmail(gmail_sender, to, email_text)
-        server.close()
- 
-        print 'Email sent!'
-    except:  
-        print 'Something went wrong...'
+
  
  
 
