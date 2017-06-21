@@ -3,10 +3,10 @@
 import re, requests, json, time, datetime, smtplib
 
 def gmail_alert(subject,body):
-    gmail_user = "gmail sender account"
-    gmail_password = "Sender Password"
+    gmail_user = "Sender Address"
+    gmail_password = "Sendera Password"
     gmail_sender = gmail_user  
-    to = ['Gmail receiver account']  
+    to = ['Receivers Address']  
      
  
     email_text = """\  
@@ -38,7 +38,7 @@ while True:
 	for post in json_posts:
 			raw_post_text = requests.get('http://pastebin.com/api_scrape_item.php?i='+ post['key'])
 		
-			if re.match('(password|leak|dump)', raw_post_text.text) is not None :
+			if re.match('(password|leak|dump)', raw_post_text.text, re.IGNORECASE) is not None :
 				w = open('{0}-{1}.txt'.format(post['key'], 'Common'), 'w')
 				w.write(raw_post_text.text.encode('utf-8').strip())
 				w.close()
@@ -48,17 +48,17 @@ while True:
 				f.write(raw_post_text.text.encode('utf-8').strip())
 				f.close()
 				gmail_alert('Base64 Encoded Exe',post['full_url'])
-			elif re.match('sdcard', raw_post_text.text) is not None :
+			elif re.match('sdcard', raw_post_text.text, re.IGNORECASE) is not None :
 				y = open('{0}-{1}.txt'.format(post['key'], 'sdcard'), 'w')
 				y.write(raw_post_text.text.encode('utf-8').strip())
 				y.close()
 				gmail_alert('sdcard',post['full_url'])			
-			elif re.match('.*.\.onion', raw_post_text.text) is not None :
+			elif re.match('.*.\.onion', raw_post_text.text, re.IGNORECASE) is not None :
 				z = open('{0}-{1}.txt'.format(post['key'], 'onion'), 'w')
 				z.write(raw_post_text.text.encode('utf-8').strip())
 				z.close()
 				gmail_alert('Onion URL',post['full_url'])			
-			elif re.match('(STRING|ENTER|DELAY)', raw_post_text.text) is not None :
+			elif re.match('(STRING|ENTER|DELAY)',  raw_post_text.text, re.IGNORECASE) is not None :
 				x = open('{0}-{1}.txt'.format(post['key'], 'Ducky'), 'w')
 				x.write(raw_post_text.text.encode('utf-8').strip())
 				x.close()
@@ -68,14 +68,21 @@ while True:
 				q.write(raw_post_text.text.encode('utf-8').strip())
 				q.close()
 				gmail_alert('http64',post['full_url'])
-			elif re.match('QUACK.*.|(powershell|bash)|(LED.*.)|(ATTACKMODE.*.)', raw_post_text.text) is not None :
+			elif re.match('QUACK.*.|(powershell|bash)|(LED.*.)|(ATTACKMODE.*.)', raw_post_text.text, re.IGNORECASE) is not None :
 				e = open('{0}-{1}.txt'.format(post['key'], 'BASH-BUNNY'), 'w')
 				e.write(raw_post_text.text.encode('utf-8').strip())
 				e.close()
-				gmail_alert('Bash Bunny',post['full_url'])		
-			
-			
-			
+				gmail_alert('Bash Bunny',post['full_url'])			
+			elif re.match('(IEX|iex|SUVY|aWV4)', raw_post_text.text) is not None :
+				h = open('{0}-{1}.txt'.format(post['key'], 'PS-IEX'), 'w')
+				h.write(raw_post_text.text.encode('utf-8').strip())
+				h.close()
+				gmail_alert('iex',post['full_url'])
+			elif re.match('powershell', raw_post_text.text, re.IGNORECASE) is not None :
+                                s = open('{0}-{1}.txt'.format(post['key'], 'PS-IGN'), 'w')
+                                s.write(raw_post_text.text.encode('utf-8').strip())
+                                s.close()
+                                gmail_alert('ps-ignorecase',post['full_url'])			
 			 
 	time.sleep(60)
 
