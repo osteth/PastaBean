@@ -1,6 +1,6 @@
 # PastaBean
-Python Script to Scrape Pastebin with Regex. This is by far a finished project and plan to improve over time.
-My goal is to make PastaBean as flexible as I can and simple to with minimal requirements to run and capture data.
+Python Script to Scrape Pastebin with Regex. This is by far a 'finished project' and plan to improve this over time.
+My goal is to make PastaBean as flexible as I can and simple to run with minimal requirements to capture data.
 
 ## Background
 Created script to learn Python and capture data on the popular site https://Pastebin.com.
