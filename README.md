@@ -11,8 +11,8 @@ Created script to learn Python and capture data on the popular site https://Past
 - Temp removed:~~E-mail alert. Have to manually add credentials for sender and receiver  into script(Gmail Only).~~
 
 ## Requirements
-- Pastebin PRO account to use the API to scrape. Need to Whitelist IP.
-- `sudo apt-get install python pip`
+- Pastebin PRO account to use the API to scrape and whitelist your IP (https://pastebin.com/doc_scraping_api).
+- `sudo apt-get install python python-pip`
 - `pip install requests`
 
 ## Future Improvements 
