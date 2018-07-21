@@ -8,19 +8,20 @@ Created script to learn Python and capture data on the popular site https://Past
 ## Features
 - Scrape Pastebin, 100 queries per 60 seconds.
 - Write matches to text file in same directory.
-- E-mail alert. Have to manually add credentials for sender and receiver  into script(Gmail Only).
+- Temp removed:~~E-mail alert. Have to manually add credentials for sender and receiver  into script(Gmail Only).~~
 
 ## Requirements
 - Pastebin PRO account to use the API to scrape. Need to Whitelist IP.
+- `sudo apt-get install python pip`
+- `pip install requests`
 
-## Future Improvements (In no order)
+## Future Improvements 
 - Improve current RegeX
 - Add more Regex Matches!!!
-- Create base64 exe decoder
 - Enable to allow script to write to custom file path
 - Reduce duplication in e-mail alerts.
 - Decreased status output to one line.
-- Generate log file for each alarm to replace e-mail alerts (Maybe JSON).
+- Generate log file for each alarm to replace e-mail alerts
 - Expand to other similar sites like pastebin.
 
 
