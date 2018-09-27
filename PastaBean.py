@@ -1,11 +1,12 @@
 #!/usr/bin/python
 
-import re, requests, json, time, datetime, smtplib
+import re, requests, json, time, datetime, logging
 
 while True:
 	### Read in last N posts and get the key and put in array
 	now = datetime.datetime.now()
-	print 'Loop Check  = ' + str(now.strftime("%H:%M:%S%p"))
+	logging.basicConfig(filename='pasta.log',level=logging.INFO)
+	logging.info('LOOP COMPLETED = ' + str(now.strftime("%H:%M:%S%p")))
 	post_limit = '100'
 	last_n_posts = requests.get('https://scrape.pastebin.com/api_scraping.php?limit=' + post_limit).text
 	json_posts = json.loads(last_n_posts)
@@ -29,7 +30,7 @@ while True:
 				d = open('{0}-{1}.txt'.format(post['key'], 'onion'), 'w')
 				d.write(raw_post_text.text.encode('utf-8').strip())
 				d.close()
-			elif re.match('(STRING|ENTER|DELAY)',  raw_post_text.text, re.IGNORECASE) is not None :
+			elif re.match('(STRING|ENTER|DELAY|QUACK|ATTACKMODE)',  raw_post_text.text, re.IGNORECASE) is not None :
 				e = open('{0}-{1}.txt'.format(post['key'], 'Ducky'), 'w')
 				e.write(raw_post_text.text.encode('utf-8').strip())
 				e.close()
@@ -45,10 +46,18 @@ while True:
 				h = open('{0}-{1}.txt'.format(post['key'], 'PS-IEX'), 'w')
 				h.write(raw_post_text.text.encode('utf-8').strip())
 				h.close()
-			elif re.match('powershell', raw_post_text.text, re.IGNORECASE) is not None :
+			elif re.match('(powershell|invoke\-expression|downloadstring)', raw_post_text.text, re.IGNORECASE) is not None :
 				i = open ('{0}-{1}.txt'.format(post['key'], 'PS-NOR'), 'w')
 				i.write(raw_post_text.text.encode('utf-8').strip())
 				i.close()
+			elif re.match('[13][a-km-zA-HJ-NP-Z1-9]{25,34}', raw_post_text.text) is not None :
+				j = open ('{0}-{1}.txt'.format(post['key'], 'BC-WAL'), 'w')
+				j.write(raw_post_text.text.encode('utf-8').strip())
+				j.close()
+			elif re.match('(http|s|:\/\/|\b([0-9]{1,3}\.){3}[0-9]{1,3}\b|/)', raw_post_text.text, re.IGNORECASE) is not None :
+				h = open ('{0}-{1}.txt'.format(post['key'], 'IP-WEB'), 'w')
+				h.write(raw_post_text.text.encode('utf-8').strip())
+				h.close()
 			
        			
 			 
@@ -56,7 +65,6 @@ while True:
 
  
  
-
 
 
 
