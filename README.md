@@ -12,9 +12,13 @@ Created script to learn Python and capture data on the popular site https://Past
 - Logging 
 
 ## Requirements
-- Pastebin PRO account to use the API to scrape and whitelist your IP (https://pastebin.com/doc_scraping_api).
+- Pastebin PRO account to use the API to scrape and whitelist your Internet IP (https://pastebin.com/doc_scraping_api).
 - `sudo apt-get install python python-pip`
 - `pip install requests`
+
+## Recommendations
+- Run on VPS 
+- Run script as background process: `python PastaBean.py &`
 
 ## Future Improvements 
 - Improve current RegeX
