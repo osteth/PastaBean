@@ -9,7 +9,7 @@ Created script to learn Python and capture data on the popular site https://Past
 - Scrape Pastebin, 100 queries per 60 seconds.
 - Write matches to text file in same directory.
 - Temp removed:~~E-mail alert. Have to manually add credentials for sender and receiver  into script(Gmail Only).~~
-- Logging 
+- Logging  - pasta.log
 
 ## Requirements
 - Pastebin PRO account to use the API to scrape and whitelist your Internet IP (https://pastebin.com/doc_scraping_api).
