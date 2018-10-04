@@ -31,7 +31,7 @@ while True:
                                 d = open('{0}-{1}.txt'.format(post['key'], 'onion'), 'w')
                                 d.write(raw_post_text.text.encode('utf-8').strip())
                                 d.close()
-                        elif re.match('(STRING|ENTER|DELAY|QUACK|ATTACKMODE)',  raw_post_text.text, re.IGNORECASE) is not None :
+                        elif re.match('GUI | WINDOWS |STRING |DELAY |REM|ENTER|SHIFT | ALT ',  raw_post_text.text) is not None :
                                 e = open('{0}-{1}.txt'.format(post['key'], 'Ducky'), 'w')
                                 e.write(raw_post_text.text.encode('utf-8').strip())
                                 e.close()
@@ -39,7 +39,7 @@ while True:
                                 f = open('{0}-{1}.txt'.format(post['key'], 'httpB64'), 'w')
                                 f.write(raw_post_text.text.encode('utf-8').strip())
                                 f.close()
-                        elif re.match('QUACK.*.|(powershell|bash)|(LED.*.)|(ATTACKMODE.*.)', raw_post_text.text, re.IGNORECASE) is not None :
+                        elif re.match('QUACK |LED |ATTACKMODE |DUCKY\_LANG', raw_post_text.text, re.IGNORECASE) is not None :
                                 g = open('{0}-{1}.txt'.format(post['key'], 'BASH-BUNNY'), 'w')
                                 g.write(raw_post_text.text.encode('utf-8').strip())
                                 g.close()
@@ -47,7 +47,7 @@ while True:
                                 h = open('{0}-{1}.txt'.format(post['key'], 'PS-IEX'), 'w')
                                 h.write(raw_post_text.text.encode('utf-8').strip())
                                 h.close()
-                        elif re.match('(powershell|invoke\-expression|downloadstring)', raw_post_text.text, re.IGNORECASE) is not None :
+                        elif re.match('powershell|invoke\-expression|downloadstring', raw_post_text.text, re.IGNORECASE) is not None :
                                 i = open ('{0}-{1}.txt'.format(post['key'], 'PS-NOR'), 'w')
                                 i.write(raw_post_text.text.encode('utf-8').strip())
                                 i.close()
@@ -55,8 +55,9 @@ while True:
                                 j = open ('{0}-{1}.txt'.format(post['key'], 'BC-WAL'), 'w')
                                 j.write(raw_post_text.text.encode('utf-8').strip())
                                 j.close()
-
-
-
+                        elif re.match ('((([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})\:[0-9]{1,5})\/[a-zA-Z0-9(-@%^#/])', raw_post_text.text) is not None :
+                                k = open ('{0}-{1}.txt'.format(post['key'], 'IP-WEB'), 'w')
+                                k.write(raw_post_text.text.encode('utf-8').strip())
+                                k.close()
 
         time.sleep(60)
