@@ -16,9 +16,13 @@ Created script to learn Python and capture data on the popular site https://Past
 - `sudo apt-get install python python-pip`
 - `pip install requests`
 
-## Recommendations
-- Run on VPS 
+## Recommendations/Usage
+- Run on VPS
+- Login via SSH
 - Run script as background process: `python PastaBean.py &`
+- To release background process to`init` use `exit` to logout of ssh session
+- Log back into VPS via SSH verify `Pastabean.py` is still running
+- Happy Hunting :)
 
 ## Future Improvements 
 - Improve current RegeX
@@ -31,7 +35,6 @@ Created script to learn Python and capture data on the popular site https://Past
 
 
 ## Contact
-Feel free to contact me for any advice, ideas or queries.
 - Twitter @Tu5k4rr
 - E-mail: Tu5k4rr@protonmail.com
 
