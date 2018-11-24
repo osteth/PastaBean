@@ -8,8 +8,7 @@ Created script to learn Python and capture data on the popular site https://Past
 ## Features
 - Scrape Pastebin, 100 queries per 60 seconds.
 - Write matches to text file in same directory.
-- Temp removed:~~E-mail alert. Have to manually add credentials for sender and receiver  into script(Gmail Only).~~
-- Logging  - pasta.log
+- Logging  - `pasta.log`
 
 ## Requirements
 - Pastebin PRO account to use the API to scrape and whitelist your Internet IP (https://pastebin.com/doc_scraping_api).
@@ -21,17 +20,17 @@ Created script to learn Python and capture data on the popular site https://Past
 - Login via SSH
 - Run script as background process: `python PastaBean.py &`
 - To release background process to`init` use `exit` to logout of ssh session
-- Log back into VPS via SSH verify `Pastabean.py` is still running
+- Log back into VPS via SSH verify `Pastabean.py` is still running 
 - Happy Hunting :)
 
 ## Future Improvements 
 - Improve current RegeX
-- Add more Regex Matches!!!
-- Enable to allow script to write to custom file path
-- Reduce duplication in e-mail alerts.
+- Add more Regex!!!
+- Enable to allow script to write to custom file path.
 - ~~Decreased status output to one line.~~
 - ~~Generate log file for each alarm to replace e-mail alerts~~
 - Expand to other similar sites like pastebin.
+
 
 
 ## Contact
