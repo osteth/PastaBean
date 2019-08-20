@@ -8,7 +8,7 @@ I have run this script for the last few years for myself. Here is a small librar
 
 To get more information about each sample check hashes via Virustotal/any.run and other Threat intel platforms.
 
-By downloading these samples you are doing so AT YOUR OWN RISK. It is your ###RESPONSIBILITY to handle and anaylse these samples safely and not infect other users.
+By downloading these samples you are doing so AT **YOUR OWN RISK**. It is your **RESPONSIBILITY** to handle and anaylse these samples safely and not infect other users.
 
 I have not analysed most of these samples so if you find anything cool please send me an email or DM via twitter.
 
