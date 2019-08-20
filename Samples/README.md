@@ -14,9 +14,9 @@ I have not analysed most of these samples so if you find anything cool please se
 
 -----------------------------------------------------
 ## Resources
-If you need help to get started don't know what your doing or want to learn check out;
+If you need help to get started don't know what your doing or want to learn check out @malwareunicorn guide;
 - https://malwareunicorn.org/workshops/re101.html#0
-- 
+
 
 ## Contact
 - Twitter https://twitter.com/Tu5k4rr
