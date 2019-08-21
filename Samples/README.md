@@ -1,6 +1,8 @@
+# **DOWNLOAD THESE SAMPLES AT YOUR OWN RISK**
 # **DO NOT RUN SAMPLES ON YOUR HOST COMPUTER! USE A VIRTUAL MACHINE**
 # **USE ISOLATED NETWORK, DO NOT RUN ON AN OPEN NETWORK**
-# **DOWNLOAD THESE SAMPLES AT YOUR OWN RISK**
+
+## Purpose: Share malware for Educational uses only to learn and study malware.
 
 -----------------------------------------------------
 
