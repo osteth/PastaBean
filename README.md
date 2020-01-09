@@ -6,6 +6,9 @@ My goal is to make PastaBean as flexible as I can and simple to run with minimal
 ## Background
 Created script to learn Python and capture data on the popular site https://Pastebin.com.
 
+## Samples
+https://github.com/Tu5k4rr/PastaBean-Samples
+
 ## Features
 - Scrape Pastebin, 100 queries per 60 seconds.
 - Write matches to text file in same directory.
