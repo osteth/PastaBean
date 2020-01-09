@@ -28,15 +28,14 @@ https://github.com/Tu5k4rr/PastaBean-Samples
 - Log back into VPS via SSH verify `Pastabean.py` is still running 
 - Happy Hunting :)
 
+## Docker(Optional)
+- Docker file to create image
+
 ## Future Improvements 
 - Improve current RegeX
 - Add more Regex!!!
-- Enable to allow script to write to custom file path.
 - ~~Decreased status output to one line.~~
 - ~~Generate log file for each alarm to replace e-mail alerts~~
-- Expand to other similar sites like pastebin.
-
-
 
 ## Contact
 - Twitter @Tu5k4rr
