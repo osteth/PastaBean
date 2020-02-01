@@ -1,18 +1,22 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import re, requests, json, time, datetime, logging
-
-while True:
-        ### Read in last N posts and get the key and put in array
-        now = datetime.datetime.now()
-        ## Logging Setup
-        logging.basicConfig(filename='pasta.log',level=logging.INFO,format='%(asctime)s %(levelname)-8s %(message)s',datefmt='%Y-%m-%d %H:%M:%S%p')
-        logging.info('Loop Completed')
-        post_limit = '100'
-        last_n_posts = requests.get('https://scrape.pastebin.com/api_scraping.php?limit=' + post_limit).text
-        json_posts = json.loads(last_n_posts)
-
-        for post in json_posts:
+def pasta():
+        while True:
+                ### Read in last N posts and get the key and put in array
+                now = datetime.datetime.now()
+                ## Logging Setup
+                logging.basicConfig(filename='pasta.log',level=logging.INFO,format='%(asctime)s %(levelname)-8s %(message)s',datefmt='%Y-%m-%d %H:%M:%S%p')
+                logging.info('Loop Completed')
+                post_limit = '100'
+                try:
+                        last_n_posts = requests.get('https://scrape.pastebin.com/api_scraping.php?limit=' + post_limit).text
+                        json_posts = json.loads(last_n_posts)
+                except:
+                        logging.info(last_n_posts)
+                        pasta()
+                        
+                for post in json_posts:
                         raw_post_text = requests.get('https://scrape.pastebin.com/api_scrape_item.php?i='+ post['key'])
 
                         if re.match('(password|leak|dump)', raw_post_text.text, re.IGNORECASE) is not None :
@@ -59,5 +63,7 @@ while True:
                                 k = open ('{0}-{1}.txt'.format(post['key'], 'IP-WEB'), 'wb')
                                 k.write(raw_post_text.text.encode('utf-8').strip())
                                 k.close()
+        
 
         time.sleep(60)
+pasta()
