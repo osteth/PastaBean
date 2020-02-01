@@ -14,6 +14,7 @@ def pasta():
                         json_posts = json.loads(last_n_posts)
                 except:
                         logging.info(last_n_posts)
+                        time.sleep(60)
                         pasta()
                         
                 for post in json_posts:
