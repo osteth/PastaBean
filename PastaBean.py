@@ -36,18 +36,10 @@ def pasta():
                                 d = open('{0}-{1}.txt'.format(post['key'], 'onion'), 'wb')
                                 d.write(raw_post_text.text.encode('utf-8').strip())
                                 d.close()
-                        elif re.match('GUI | WINDOWS |STRING |DELAY |REM|ENTER|SHIFT | ALT ',  raw_post_text.text) is not None :
-                                e = open('{0}-{1}.txt'.format(post['key'], 'Ducky'), 'wb')
-                                e.write(raw_post_text.text.encode('utf-8').strip())
-                                e.close()
                         elif re.match('aHR0cDovLw', raw_post_text.text) is not None :
                                 f = open('{0}-{1}.txt'.format(post['key'], 'httpB64'), 'wb')
                                 f.write(raw_post_text.text.encode('utf-8').strip())
                                 f.close()
-                        elif re.match('QUACK |LED |ATTACKMODE |DUCKY\_LANG', raw_post_text.text, re.IGNORECASE) is not None :
-                                g = open('{0}-{1}.txt'.format(post['key'], 'BASH-BUNNY'), 'wb')
-                                g.write(raw_post_text.text.encode('utf-8').strip())
-                                g.close()
                         elif re.match('(IEX|iex|SUVY|aWV4)', raw_post_text.text) is not None :
                                 h = open('{0}-{1}.txt'.format(post['key'], 'PS-IEX'), 'wb')
                                 h.write(raw_post_text.text.encode('utf-8').strip())
@@ -64,6 +56,18 @@ def pasta():
                                 k = open ('{0}-{1}.txt'.format(post['key'], 'IP-WEB'), 'wb')
                                 k.write(raw_post_text.text.encode('utf-8').strip())
                                 k.close()
+                        elif re.match ('([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)', raw_post_text.text) is not None :
+                                k = open ('{0}-{1}.txt'.format(post['key'], 'Email'), 'wb')
+                                k.write(raw_post_text.text.encode('utf-8').strip())
+                                k.close()
+                        elif re.match ('(\d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4})', raw_post_text.text) is not None :
+                                k = open ('{0}-{1}.txt'.format(post['key'], 'Phone'), 'wb')
+                                k.write(raw_post_text.text.encode('utf-8').strip())
+                                k.close()                                
+                        elif re.match ('(^\d{3}-?\d{2}-?\d{4}$|^XXX-XX-XXXX$)', raw_post_text.text) is not None :
+                                k = open ('{0}-{1}.txt'.format(post['key'], 'SSN'), 'wb')
+                                k.write(raw_post_text.text.encode('utf-8').strip())
+                                k.close()   
         
 
         time.sleep(60)
